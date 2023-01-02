@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+
+.heading{
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 9vmin;
+    max-width: 900px;
+}

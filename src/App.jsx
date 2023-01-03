@@ -5,7 +5,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="bg-yellow-500">
         {/* <Navigation />     */}
         <Gallery />
     </div>

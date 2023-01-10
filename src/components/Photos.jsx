@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {images} from '../constants'
+import './gallery.css'
 
 const Photos = () => {
 
@@ -11,17 +12,24 @@ const Photos = () => {
     setSelected(true)
     setPic(image.url)
     setBlur("blur-lg")
+    displayRandomImages(images)
   }
   const handleClickOnCancel = () =>{
     setSelected(false)
     setBlur("")
   }
+
+  const displayRandomImages = (images) => {
+    const randomNumber = Math.floor(Math.random() * images.length)
+    console.log(randomNumber)
+  }
+
   return (
     <>
     <div className='flex justify-center align-center p-8'>
         <h1 className={`heading text-5xl filter ${blur}`}>Gabbar's Gallery</h1>
     </div>
-    
+
     <div className={selected ? "block" : "hidden"}>
 
       <img src={pic} alt="selected pic of gabbar"
@@ -32,11 +40,13 @@ const Photos = () => {
     </div>
 
     <div className='flex flex-col justify-center align-center gap-10 flex-wrap sm:flex-row'>
+
         {images.map((image, index) => 
             <div onClick={() => handleClick(image)}
-            className={` overflow-hidden max-w-[450px] rounded mx-10 border-4 border-white filter ${blur}`} 
+            className={`overflow-hidden max-w-[450px] rounded mx-10 border-4 border-white filter ${blur}`} 
             key={image.id}>
                 <img src={image.url} 
+                loading="lazy"
                 className="transition linear delay-150 hover:scale-105 cursor-pointer w-full h-[400px] object-cover object-center sm:w-[600px] h-[500px]" />
             </div>
             )}  

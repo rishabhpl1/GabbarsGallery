@@ -5,3 +5,23 @@
     font-size: 9vmin;
     max-width: 900px;
 }
+
+.gabbar-icon{
+    position:relative;
+    top: -90px;
+    /* border: 4px solid white;     */
+  
+}
+.gabbar-loading-heading{
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 9vmin;
+    max-width: 900px;
+}
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
